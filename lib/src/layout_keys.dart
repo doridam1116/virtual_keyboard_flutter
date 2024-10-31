@@ -4,7 +4,7 @@ abstract class VirtualKeyboardLayoutKeys {
   int activeIndex = 0;
 
   List<List> get defaultEnglishLayout => _defaultEnglishLayout;
-  List<List> get defaultArabicLayout => _defaultArabicLayout;
+  List<List> get defaultKoreanLayout => _defaultKoreanLayout;
 
   List<List> get activeLayout => getLanguage(activeIndex);
   int getLanguagesCount();
@@ -28,8 +28,8 @@ class VirtualKeyboardDefaultLayoutKeys extends VirtualKeyboardLayoutKeys {
     switch (defaultLayouts[index]) {
       case VirtualKeyboardDefaultLayouts.English:
         return _defaultEnglishLayout;
-      case VirtualKeyboardDefaultLayouts.Arabic:
-        return _defaultArabicLayout;
+      case VirtualKeyboardDefaultLayouts.Korean:
+        return _defaultKoreanLayout;
       default:
     }
     return _defaultEnglishLayout;
@@ -105,7 +105,8 @@ const List<List> _defaultEnglishLayout = [
   ]
 ];
 
-const List<List> _defaultArabicLayout = [
+/// Keys for Virtual Keyboard's rows.
+const List<List> _defaultKoreanLayout = [
   // Row 1
   const [
     '1',
@@ -121,47 +122,46 @@ const List<List> _defaultArabicLayout = [
   ],
   // Row 2
   const [
-    'ض',
-    'ص',
-    'ث',
-    'ق',
-    'ف',
-    'غ',
-    'ع',
-    'ه',
-    'خ',
-    'ح',
-    'د',
+    'ㅂ',
+    'ㅈ',
+    'ㄷ',
+    'ㄱ',
+    'ㅅ',
+    'ㅛ',
+    'ㅕ',
+    'ㅑ',
+    'ㅐ',
+    'ㅔ',
     VirtualKeyboardKeyAction.Backspace
   ],
   // Row 3
   const [
-    'ش',
-    'س',
-    'ي',
-    'ب',
-    'ل',
-    'ا',
-    'ت',
-    'ن',
-    'م',
-    'ك',
-    'ط',
+    'ㅁ',
+    'ㄴ',
+    'ㅇ',
+    'ㄹ',
+    'ㅎ',
+    'ㅗ',
+    'ㅓ',
+    'ㅏ',
+    'ㅣ',
+    ';',
+    '\'',
     VirtualKeyboardKeyAction.Return
   ],
   // Row 4
   const [
-    'ذ',
-    'ئ',
-    'ء',
-    'ؤ',
-    'ر',
-    'لا',
-    'ى',
-    'ة',
-    'و',
+    VirtualKeyboardKeyAction.Shift,
+    'ㅋ',
+    'ㅌ',
+    'ㅊ',
+    'ㅍ',
+    'ㅠ',
+    'ㅜ',
+    'ㅡ',
+    ',',
     '.',
-    'ظ',
+    '/',
     VirtualKeyboardKeyAction.Shift
   ],
   // Row 5
@@ -169,7 +169,7 @@ const List<List> _defaultArabicLayout = [
     VirtualKeyboardKeyAction.SwithLanguage,
     '@',
     VirtualKeyboardKeyAction.Space,
-    '-',
+    '&',
     '_',
   ]
 ];
